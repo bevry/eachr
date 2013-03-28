@@ -1,6 +1,5 @@
-# Balupton's Utility Functions [![Build Status](https://secure.travis-ci.org/balupton/bal-util.png?branch=master)](http://travis-ci.org/balupton/bal-util)
-Common utility functions for Node.js used and maintained by Benjamin Lupton
-
+# Eachr [![Build Status](https://secure.travis-ci.org/bevry/eachr.png?branch=master)](http://travis-ci.org/bevry/eachr)
+Utilities for cloning, extending, and de-referencing objects in shallow, deep, and safe ways
 
 
 ## Install
@@ -8,36 +7,52 @@ Common utility functions for Node.js used and maintained by Benjamin Lupton
 ### Backend
 
 1. [Install Node.js](http://bevry.me/node/install)
-2. `npm install --save bal-util`
+2. `npm install --save eachr`
 
 ### Frontend
 
-1. [See Browserify](http://browserify.org/)
+1. [See Browserify](http://browserify.org)
 
 
 
 ## Usage
-Best off looking at source, it's well documented, and there are plenty of tests
 
+### Example
 
+``` javascript
+// Prepare
+var each = require(".");
+var arr = ["first", "second", "third"];
+var obj = {a:"first", b:"second", c:"third"};
+var iterator = function(value,key){
+	console.log({value:value, key:key});
+	if ( value === "second" ) {
+		console.log("break");
+		return false;
+	}
+};
 
-## Future
-We're in the process of abstracting the pieces of bal-util out into their own modules. So far, we've done the following:
+// Cycle Array
+each(arr, iterator);
+// {"value":"first",  "key":0}
+// {"value":"second", "key":1}
+// break
 
-- balUtilFlow.Group > [TaskGroup](https://github.com/bevry/taskgroup)
-- balUtilFlow.fireWithOptionalCallback > [ambi](https://github.com/bevry/ambi)
-- balUtilTypes > [typeChecker](https://github.com/bevry/typechecker)
-- balUtilFlow.safeCallback > [safeCallback](https://github.com/bevry/safecallback)
-
-More to come.
+// Cycle Object
+each(obj, iterator);
+// {"value":"first",  "key":"a"}
+// {"value":"second", "key":"b"}
+// break
+```
 
 
 
 ## History
-You can discover the history inside the [History.md](https://github.com/balupton/bal-util/blob/master/History.md#files) file
+You can discover the history inside the [History.md](https://github.com/bevry/eachr/blob/master/History.md#files) file
 
 
 
 ## License
 Licensed under the incredibly [permissive](http://en.wikipedia.org/wiki/Permissive_free_software_licence) [MIT License](http://creativecommons.org/licenses/MIT/)
-<br/>Copyright © 2011+ [Benjamin Arthur Lupton](http://balupton.com)
+<br/>Copyright © 2013+ [Bevry Pty Ltd](http://bevry.me)
+<br/>Copyright © 2011-2012 [Benjamin Arthur Lupton](http://balupton.com)
