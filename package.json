@@ -1,6 +1,6 @@
 {
 	"name": "eachr",
-	"version": "2.0.1",
+	"version": "2.0.2",
 	"description": "Give eachr an array or object, and the iterator, in return eachr will give the iterator the value and key of each item, and will stop if the iterator returned false.",
 	"homepage": "https://github.com/bevry/eachr",
 	"keywords": [
@@ -23,7 +23,9 @@
 	"engines" : {
 		"node": ">=0.4"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"typechecker": "~2.0.1"
+	},
 	"devDependencies": {
 		"coffee-script": "~1.6.2",
 		"joe": "~1.1.2",

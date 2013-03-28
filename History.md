@@ -1,5 +1,8 @@
 ## History
 
+- v2.0.2 March 29, 2013
+	- Added missing `typechecker` dependency
+
 - v2.0.1 March 29, 2013
 	- Returns the subject instead of `this`
 
