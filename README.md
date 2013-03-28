@@ -19,7 +19,7 @@ Give eachr an array or object, and the iterator, in return eachr will give the i
 
 ``` javascript
 // Prepare
-var each = require(".");
+var each = require("eachr");
 var arr = ["first", "second", "third"];
 var obj = {a:"first", b:"second", c:"third"};
 var iterator = function(value,key){
