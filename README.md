@@ -1,5 +1,5 @@
 # Eachr [![Build Status](https://secure.travis-ci.org/bevry/eachr.png?branch=master)](http://travis-ci.org/bevry/eachr)
-Utilities for cloning, extending, and de-referencing objects in shallow, deep, and safe ways
+Give eachr an array or object, and the iterator, in return eachr will give the iterator the value and key of each item, and will stop if the iterator returned false.
 
 
 ## Install
@@ -16,8 +16,6 @@ Utilities for cloning, extending, and de-referencing objects in shallow, deep, a
 
 
 ## Usage
-
-### Example
 
 ``` javascript
 // Prepare

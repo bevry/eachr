@@ -13,8 +13,8 @@ eachr = (subject,callback,context) ->
 			if callback.apply(subject,[value,key,subject]) is false
 				break
 
-	# Chain
-	@
+	# Return
+	subject
 
 # Export
 module.exports = eachr

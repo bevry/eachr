@@ -18,7 +18,7 @@ joe.describe 'eachr', (describe,it) ->
 		actual = []
 
 		# Cycle
-		each arr, (value, key, subject) ->
+		result = each arr, (value, key, subject) ->
 			actual.push([value, key, subject, @])
 			if value is "second"
 				actual.push("break")
@@ -26,6 +26,7 @@ joe.describe 'eachr', (describe,it) ->
 
 		# Check
 		expect(actual).to.deep.equal(expected)
+		expect(result).to.equal(arr)
 
 	# Objects
 	it 'should cycle objects',->
@@ -39,7 +40,7 @@ joe.describe 'eachr', (describe,it) ->
 		actual = []
 
 		# Cycle
-		each obj, (value, key, subject) ->
+		result = each obj, (value, key, subject) ->
 			actual.push([value, key, subject, @])
 			if value is "second"
 				actual.push("break")
@@ -47,3 +48,4 @@ joe.describe 'eachr', (describe,it) ->
 
 		# Check
 		expect(actual).to.deep.equal(expected)
+		expect(result).to.equal(obj)

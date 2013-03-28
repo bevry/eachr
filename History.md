@@ -1,5 +1,8 @@
 ## History
 
+- v2.0.1 March 29, 2013
+	- Returns the subject instead of `this`
+
 - v2.0.0 March 29, 2013
 	- Split from bal-util
 
