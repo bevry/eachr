@@ -1,5 +1,11 @@
-# Eachr [![Build Status](https://secure.travis-ci.org/bevry/eachr.png?branch=master)](http://travis-ci.org/bevry/eachr)
+# Eachr
+
+[![Build Status](https://secure.travis-ci.org/eachr/eachr.png?branch=master)](http://travis-ci.org/bevry/eachr)
+[![NPM version](https://badge.fury.io/js/eachr.png)](https://npmjs.org/package/eachr)
+[![Flattr this project](https://raw.github.com/balupton/flattr-buttons/master/badge-89x18.gif)](http://flattr.com/thing/344188/balupton-on-Flattr)
+
 Give eachr an array or object, and the iterator, in return eachr will give the iterator the value and key of each item, and will stop if the iterator returned false.
+
 
 
 ## Install
