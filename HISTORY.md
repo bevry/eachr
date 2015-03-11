@@ -1,5 +1,8 @@
 ## History
 
+- v2.0.3 February 8th, 2014
+	- Updated dependencies
+
 - v2.0.2 March 29, 2013
 	- Added missing `typechecker` dependency
 
