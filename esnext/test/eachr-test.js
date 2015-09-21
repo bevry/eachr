@@ -1,51 +1,86 @@
-# Import
-{expect} = require('chai')
-joe = require('joe')
-each = require('../..')
+// Import
+const {equal, deepEqual} = require('assert-helpers')
+const joe = require('joe')
+const eachr = require('../..')
 
-# Test
-joe.describe 'eachr', (describe,it) ->
+// Test
+joe.suite('eachr', function (suite, test) {
 
-	# Arrays
-	it 'should cycle arrays',->
-		# Prepare
-		arr = ["first", "second", "third"]
-		expected = [
-			["first",  0, arr, arr]
-			["second", 1, arr, arr]
-			"break"
+	// Arrays
+	test('should cycle arrays', function () {
+		// Prepare
+		const arr = ['first', 'second', 'third']
+		const expected = [
+			['first',  0, arr, arr],
+			['second', 1, arr, arr],
+			'break'
 		]
-		actual = []
+		const actual = []
 
-		# Cycle
-		result = each arr, (value, key, subject) ->
-			actual.push([value, key, subject, @])
-			if value is "second"
-				actual.push("break")
+		// Cycle
+		const result = eachr(arr, function (value, key, subject) {
+			equal(subject, arr, 'subject is as expected')
+			actual.push([value, key, subject, this])
+			if ( value === 'second' ) {
+				actual.push('break')
 				return false
+			}
+		})
 
-		# Check
-		expect(actual).to.deep.equal(expected)
-		expect(result).to.equal(arr)
+		// Check
+		deepEqual(actual, expected)
+		equal(result, arr, 'result is the same object reference')
+	})
 
-	# Objects
-	it 'should cycle objects',->
-		# Prepare
-		obj = {a:"first", b:"second", c:"third"}
-		expected = [
-			["first",  "a", obj, obj]
-			["second", "b", obj, obj]
-			"break"
+	// Objects
+	test('should cycle objects', function () {
+		// Prepare
+		const obj = {a: 'first', b: 'second', c: 'third'}
+		const expected = [
+			['first',  'a', obj, obj],
+			['second', 'b', obj, obj],
+			'break'
 		]
-		actual = []
+		const actual = []
 
-		# Cycle
-		result = each obj, (value, key, subject) ->
-			actual.push([value, key, subject, @])
-			if value is "second"
-				actual.push("break")
+		// Cycle
+		const result = eachr(obj, function (value, key, subject) {
+			equal(subject, obj, 'subject is as expected')
+			actual.push([value, key, subject, this])
+			if ( value === 'second' ) {
+				actual.push('break')
 				return false
+			}
+		})
 
-		# Check
-		expect(actual).to.deep.equal(expected)
-		expect(result).to.equal(obj)
+		// Check
+		deepEqual(actual, expected)
+		equal(result, obj, 'result is the same object reference')
+	})
+
+	// Objects
+	test('should cycle maps', function () {
+		// Prepare
+		const map = new Map([['a', 'first'], ['b', 'second'], ['c', 'third']])
+		const expected = [
+			['first',  'a', map, map],
+			['second', 'b', map, map],
+			'break'
+		]
+		const actual = []
+
+		// Cycle
+		const result = eachr(map, function (value, key, subject) {
+			equal(subject, map, 'subject is as expected')
+			actual.push([value, key, subject, this])
+			if ( value === 'second' ) {
+				actual.push('break')
+				return false
+			}
+		})
+
+		// Check
+		deepEqual(actual, expected)
+		equal(result, map, 'result is the same object reference')
+	})
+})

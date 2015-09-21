@@ -1,24 +1,32 @@
-# February 19, 2015
+# 9 September 2015
 # https://github.com/bevry/base
+
+# Use the latest travis infrastructure
+sudo: false
+
+# We use node
 language: node_js
-# ensure npm is the latest version (ignore node versions that can't run it)
-# ensure coffee-script is installed (needed for cake commands)
-# ensure dev dependencies are installed (handled via npm install)
-# ensure test dependencies are installed (handled via cake install)
-install: "npm install -g npm && npm install coffee-script && npm install && ./node_modules/.bin/cake install"
-# ensure our application is compiled before we run our tests
-before_script: "./node_modules/.bin/cake compile"
-script: "npm test"
 node_js:
-  - "0.10"
   - "0.12"
-  - iojs
+  - "4"
 cache:
   directories:
     - node_modules
+
+# Prepare our tests
+# Ensure the project is setup correctly and compiled
+install: "npm run-script setup"
+before_script: "npm run-script compile"
+
+# Run our tests
+script: "npm test"
+
+# Custom notifications
+# travisencrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
+# travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
 notifications:
-  irc:
-    - "irc.freenode.org#bevry-dev"
+  slack:
+    secure: Gk2EhJCq0vEgyu39V1FT0Rkme2S0gnxe1876qlxtWC+YGjgcSB4ueqbEngEF+4KozKm0H1uklFSdk7lWui6VCqX+sqLy2Lb6LtqMzP4bcQw4+kA4/PXuyJYOaEio5hOFX+QmHq0SC9ggpf8MbOe8ve+X1Z7l8A7Y0RBhXwFCHwU=
   email:
     recipients:
-      - travisci@bevry.me
+      secure: sctnKYxOtc1lU2mx9md02XIUZKZNPI4Mz6lZAXIKAmTdkEPnx9Zd3BzS1P1KbUBFjyQTtJuABE3LD1hm+NqO+RnP+PcAQ/xHLIutPKKDPZjNoKLJnnlmyFJQa0JI732WOdcSr+lZphlRwROjYVLE585CrifXzlqgTFvrc6GZg+0=
