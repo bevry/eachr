@@ -1,8 +1,11 @@
+/* eslint no-cond-assign:0 */
+'use strict'
+
 // Import
 const typeChecker = require('typechecker')
 
 // Define
-export default function eachr (subject, callback) {
+function eachr (subject, callback) {
 	// Handle
 	if ( typeChecker.isArray(subject) ) {
 		for ( let key = 0, n = subject.length; key < n; ++key ) {
@@ -24,18 +27,20 @@ export default function eachr (subject, callback) {
 	}
 	else if ( typeChecker.isMap(subject) ) {
 		const entries = subject.entries()
-		/* eslint no-cond-assign:0 */
 		let entry; while ( entry = entries.next().value ) {
-			const [key, value] = entry
+			const [key, value] = entry  // destructuring
 			if ( callback.call(subject, value, key, subject) === false ) {
 				break
 			}
 		}
 	}
 	else {
-		throw new Error('I don\'t know how to iterate this.')
+		throw new Error('eachr does not know how to iterate what was passed to it')
 	}
 
 	// Return
 	return subject
 }
+
+// Export
+module.exports = eachr

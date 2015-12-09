@@ -1,4 +1,4 @@
-# 9 September 2015
+# 2015 December 9
 # https://github.com/bevry/base
 
 # Use the latest travis infrastructure
@@ -9,6 +9,7 @@ language: node_js
 node_js:
   - "0.12"
   - "4"
+  - "5"
 cache:
   directories:
     - node_modules
@@ -22,8 +23,6 @@ before_script: "npm run-script compile"
 script: "npm test"
 
 # Custom notifications
-# travisencrypt --org "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack
-# travisencrypt --org "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients
 notifications:
   slack:
     secure: Gk2EhJCq0vEgyu39V1FT0Rkme2S0gnxe1876qlxtWC+YGjgcSB4ueqbEngEF+4KozKm0H1uklFSdk7lWui6VCqX+sqLy2Lb6LtqMzP4bcQw4+kA4/PXuyJYOaEio5hOFX+QmHq0SC9ggpf8MbOe8ve+X1Z7l8A7Y0RBhXwFCHwU=

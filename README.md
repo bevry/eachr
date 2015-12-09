@@ -42,7 +42,7 @@ Give eachr an item to iterate (array, object or map) and an iterator, then in re
 <a href="http://browserify.org" title="Browserify lets you require('modules') in the browser by bundling up all of your dependencies"><h3>Browserify</h3></a><ul>
 <li>Install: <code>npm install --save eachr</code></li>
 <li>Use: <code>require('eachr')</code></li>
-<li>CDN URL: <code>//wzrd.in/bundle/eachr@3.0.0</code></li></ul>
+<li>CDN URL: <code>//wzrd.in/bundle/eachr@3.1.0</code></li></ul>
 
 <a href="http://enderjs.com" title="Ender is a full featured package manager for your browser"><h3>Ender</h3></a><ul>
 <li>Install: <code>ender add eachr</code></li>
@@ -133,8 +133,9 @@ No sponsors yet! Will you be the first?
 These amazing people have contributed code to this project:
 
 <ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eachr/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eachr">view contributions</a></li>
-<li><a href="www.seanfridman.com">Sean Fridman</a> — <a href="https://github.com/bevry/eachr/commits?author=sfrdmn" title="View the GitHub contributions of Sean Fridman on repository bevry/eachr">view contributions</a></li>
-<li><a href="http://robloach.net">Rob Loach</a> — <a href="https://github.com/bevry/eachr/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eachr">view contributions</a></li></ul>
+<li><a href="www.seanfridman.com">Sean Fridman</a></li>
+<li><a href="http://robloach.net">Rob Loach</a> — <a href="https://github.com/bevry/eachr/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eachr">view contributions</a></li>
+<li><a href="http://seanfridman.com">Sean Fridman</a> — <a href="https://github.com/bevry/eachr/commits?author=sfrdmn" title="View the GitHub contributions of Sean Fridman on repository bevry/eachr">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/eachr/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
