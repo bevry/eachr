@@ -4,11 +4,11 @@
 // Import
 const typeChecker = require('typechecker')
 
-// Define
-function eachr (subject, callback) {
+// Eachr
+module.exports = function eachr (subject, callback) {
 	// Handle
 	if ( typeChecker.isArray(subject) ) {
-		for ( let key = 0, n = subject.length; key < n; ++key ) {
+		for ( let key = 0; key < subject.length; ++key ) {
 			const value = subject[key]
 			if ( callback.call(subject, value, key, subject) === false ) {
 				break
@@ -41,6 +41,3 @@ function eachr (subject, callback) {
 	// Return
 	return subject
 }
-
-// Export
-module.exports = eachr

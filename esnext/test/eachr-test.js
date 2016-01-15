@@ -4,6 +4,7 @@
 // Import
 const {equal, deepEqual} = require('assert-helpers')
 const joe = require('joe')
+const semver = require('semver')
 const eachr = require('../..')
 
 // Test
@@ -63,6 +64,11 @@ joe.suite('eachr', function (suite, test) {
 
 	// Objects
 	test('should cycle maps', function () {
+		if ( semver.satisfies(process.version, '>=0.12') === false ) {
+			console.warn(`This version of node ${process.version} does not support Maps, skipping test...`)
+			return
+		}
+
 		// Prepare
 		const map = new Map([['a', 'first'], ['b', 'second'], ['c', 'third']])
 		const expected = [
