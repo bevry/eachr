@@ -35,6 +35,7 @@ module.exports = function eachr (subject, callback) {
 		}
 	}
 	else {
+		// Perhaps falling back to a `for of` loop here would be sensible
 		throw new Error('eachr does not know how to iterate what was passed to it')
 	}
 
