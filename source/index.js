@@ -1,5 +1,4 @@
 /* eslint no-cond-assign:0 */
-'use strict'
 
 // Import
 const typeChecker = require('typechecker')

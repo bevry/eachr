@@ -1,5 +1,9 @@
 # History
 
+## v3.2.0 2016 May 27
+- Updated internal conventions
+  - Moved from [ESNextGuardian](https://github.com/bevry/esnextguardian) to [Editions](https://github.com/bevry/editions)
+
 ## v3.1.1 2016 January 15
 - Minimum supported node version changed from 0.12 to 0.10
 	- Although node 0.10 has broken Maps, so iterating Maps is not support for node 0.10

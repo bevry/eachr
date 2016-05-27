@@ -37,16 +37,26 @@ Give eachr an item to iterate (array, object or map) and an iterator, then in re
 
 <a href="https://npmjs.com" title="npm is a package manager for javascript"><h3>NPM</h3></a><ul>
 <li>Install: <code>npm install --save eachr</code></li>
-<li>Use: <code>require('eachr')</code></li></ul>
+<li>Module: <code>require('eachr')</code></li></ul>
 
 <a href="http://browserify.org" title="Browserify lets you require('modules') in the browser by bundling up all of your dependencies"><h3>Browserify</h3></a><ul>
 <li>Install: <code>npm install --save eachr</code></li>
-<li>Use: <code>require('eachr')</code></li>
-<li>CDN URL: <code>//wzrd.in/bundle/eachr@3.1.1</code></li></ul>
+<li>Module: <code>require('eachr')</code></li>
+<li>CDN URL: <code>//wzrd.in/bundle/eachr@3.2.0</code></li></ul>
 
 <a href="http://enderjs.com" title="Ender is a full featured package manager for your browser"><h3>Ender</h3></a><ul>
 <li>Install: <code>ender add eachr</code></li>
-<li>Use: <code>require('eachr')</code></li></ul>
+<li>Module: <code>require('eachr')</code></li></ul>
+
+<h3><a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a></h3>
+
+<p>This package is published with the following editions:</p>
+
+<ul><li><code>eachr</code> aliases <code>eachr/index.js</code> which uses <a href="https://github.com/bevry/editions" title="Editions are the best way to produce and consume packages you care about.">Editions</a> to automatically select the correct edition for the consumers environment</li>
+<li><code>eachr/source/index.js</code> is Source + <a href="https://babeljs.io/docs/learn-es2015/" title="ECMAScript Next">ESNext</a> + <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a></li>
+<li><code>eachr/es2015/index.js</code> is <a href="https://babeljs.io" title="The compiler for writing next generation JavaScript">Babel</a> Compiled + <a href="http://babeljs.io/docs/plugins/preset-es2015/" title="ECMAScript 2015">ES2015</a> + <a href="https://nodejs.org/dist/latest-v5.x/docs/api/modules.html" title="Node/CJS Modules">Require</a></li></ul>
+
+<p>Older environments may need <a href="https://babeljs.io/docs/usage/polyfill/" title="A polyfill that emulates missing ECMAScript environment features">Babel's Polyfill</a> or something similar.</p>
 
 <!-- /INSTALL -->
 
@@ -115,7 +125,7 @@ eachr(map, iterator)
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eachr/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eachr">view contributions</a></li></ul>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -132,10 +142,11 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eachr/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eachr">view contributions</a></li>
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a></li>
 <li><a href="www.seanfridman.com">Sean Fridman</a></li>
 <li><a href="http://robloach.net">Rob Loach</a> — <a href="https://github.com/bevry/eachr/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eachr">view contributions</a></li>
-<li><a href="http://seanfridman.com">Sean Fridman</a> — <a href="https://github.com/bevry/eachr/commits?author=sfrdmn" title="View the GitHub contributions of Sean Fridman on repository bevry/eachr">view contributions</a></li></ul>
+<li><a href="http://seanfridman.com">Sean Fridman</a> — <a href="https://github.com/bevry/eachr/commits?author=sfrdmn" title="View the GitHub contributions of Sean Fridman on repository bevry/eachr">view contributions</a></li>
+<li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eachr/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eachr">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/eachr/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 

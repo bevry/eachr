@@ -1,11 +1,10 @@
-/* eslint no-magic-numbers:0 */
-'use strict'
+/* eslint no-console:0 */
 
 // Import
 const {equal, deepEqual} = require('assert-helpers')
 const joe = require('joe')
 const semver = require('semver')
-const eachr = require('../..')
+const eachr = require('../')
 
 // Test
 joe.suite('eachr', function (suite, test) {
