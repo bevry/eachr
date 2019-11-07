@@ -99,7 +99,7 @@
     "joe": "^1.6.0",
     "joe-reporter-console": "^1.2.1",
     "projectz": "^1.1.5",
-    "semver": "^5.1.0"
+    "semver": "^6.3.0"
   },
   "scripts": {
     "setup": "npm install",
