@@ -1,6 +1,6 @@
 {
   "name": "eachr",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Give eachr an item to iterate (array, object or map) and an iterator, then in return eachr gives iterator the value and key of each item, and will stop if the iterator returned false.",
   "homepage": "https://github.com/bevry/eachr",
   "license": "MIT",
