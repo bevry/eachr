@@ -1,6 +1,6 @@
 {
   "name": "eachr",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Give eachr an item to iterate (array, object or map) and an iterator, then in return eachr gives iterator the value and key of each item, and will stop if the iterator returned false.",
   "homepage": "https://github.com/bevry/eachr",
   "license": "MIT",
@@ -51,7 +51,8 @@
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Sean Fridman <fridman@mail.sfsu.edu> (www.seanfridman.com)",
     "Rob Loach <robloach@gmail.com> (http://robloach.net)",
-    "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)"
+    "Sean Fridman <mail@seanfridman.com> (http://seanfridman.com)",
+    "dependabot-preview[bot] (http://github.com/apps/dependabot-preview)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/eachr/issues"
@@ -98,21 +99,21 @@
     "typechecker": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.7.1",
-    "assert-helpers": "5.4.0",
-    "eslint": "^6.6.0",
-    "eslint-config-bevry": "^1.2.1",
-    "eslint-config-prettier": "^6.6.0",
+    "@babel/cli": "^7.7.4",
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "assert-helpers": "5.5.0",
+    "eslint": "^6.7.2",
+    "eslint-config-bevry": "^1.3.0",
+    "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-prettier": "^3.1.1",
     "kava": "4.1.0",
     "prettier": "^1.19.1",
-    "projectz": "^1.10.0",
+    "projectz": "^1.12.0",
     "semver": "^6.3.0",
-    "valid-directory": "^1.1.1"
+    "valid-directory": "^1.3.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
