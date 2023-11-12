@@ -1,6 +1,6 @@
 {
   "name": "eachr",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Give eachr an item to iterate (array, object or map) and an iterator, then in return eachr gives iterator the value and key of each item, and will stop if the iterator returned false.",
   "homepage": "https://github.com/bevry/eachr",
   "license": "Artistic-2.0",
@@ -70,7 +70,7 @@
     "url": "https://github.com/bevry/eachr.git"
   },
   "engines": {
-    "node": ">=6"
+    "node": ">=4"
   },
   "editions": [
     {
@@ -115,6 +115,20 @@
         "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
         "browsers": false
       }
+    },
+    {
+      "description": "ESNext compiled for Node.js 6 with Require for modules",
+      "directory": "edition-node-6",
+      "entry": "index.js",
+      "tags": [
+        "compiled",
+        "javascript",
+        "require"
+      ],
+      "engines": {
+        "node": "4 || 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "browsers": false
+      }
     }
   ],
   "type": "commonjs",
@@ -139,14 +153,15 @@
     "kava": "3.2.0",
     "prettier": "^3.0.3",
     "projectz": "^2.23.0",
-    "semver": "^7.5.4",
+    "semver": "4.3.6",
     "valid-directory": "^4.1.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-node-21",
+    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-node-21 && npm run our:compile:edition-node-6",
     "our:compile:edition-browsers": "env BABEL_ENV=edition-browsers babel --out-dir ./edition-browsers ./source",
     "our:compile:edition-node-21": "env BABEL_ENV=edition-node-21 babel --out-dir ./edition-node-21 ./source && printf '%s' '{\"type\": \"commonjs\"}' > edition-node-21/package.json",
+    "our:compile:edition-node-6": "env BABEL_ENV=edition-node-6 babel --out-dir ./edition-node-6 ./source && printf '%s' '{\"type\": \"commonjs\"}' > edition-node-6/package.json",
     "our:deploy": "printf '%s\n' 'no need for this project'",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
     "our:meta:contributors": "update-contributors",
@@ -203,6 +218,23 @@
             {
               "targets": {
                 "node": "21"
+              },
+              "modules": "commonjs"
+            }
+          ]
+        ],
+        "plugins": [
+          "@babel/proposal-object-rest-spread"
+        ]
+      },
+      "edition-node-6": {
+        "sourceType": "script",
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": {
+                "node": "6"
               },
               "modules": "commonjs"
             }
