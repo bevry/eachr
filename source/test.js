@@ -61,7 +61,7 @@ kava.suite('eachr', function (suite, test) {
 	test('should cycle maps', function () {
 		if (semver.satisfies(process.version, '>=0.12') === false) {
 			console.warn(
-				`This version of node ${process.version} does not support Maps, skipping test...`,
+				`This version of node ${process.version} does not support Maps, skipping test...`
 			)
 			return
 		}

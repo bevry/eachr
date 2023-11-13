@@ -1,6 +1,6 @@
 {
   "name": "eachr",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "Give eachr an item to iterate (array, object or map) and an iterator, then in return eachr gives iterator the value and key of each item, and will stop if the iterator returned false.",
   "homepage": "https://github.com/bevry/eachr",
   "license": "Artistic-2.0",
@@ -135,8 +135,8 @@
   "main": "index.cjs",
   "browser": "edition-browsers/index.js",
   "dependencies": {
-    "editions": "^6.10.0",
-    "typechecker": "^8.0.0"
+    "editions": "^6.11.0",
+    "typechecker": "^8.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
@@ -144,14 +144,14 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.23.3",
     "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.1.0",
+    "assert-helpers": "^11.2.0",
     "eslint": "^8.53.0",
     "eslint-config-bevry": "^3.29.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^5.0.1",
-    "kava": "3.2.0",
-    "prettier": "^3.0.3",
+    "kava": "^7.0.0",
+    "prettier": "^3.1.0",
     "projectz": "^2.23.0",
     "semver": "4.3.6",
     "valid-directory": "^4.1.0"
@@ -188,7 +188,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "es5"
   },
   "babel": {
     "env": {
