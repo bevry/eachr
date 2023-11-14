@@ -1,6 +1,6 @@
 {
   "name": "eachr",
-  "version": "6.1.0",
+  "version": "6.2.0",
   "description": "Give eachr an item to iterate (array, object or map) and an iterator, then in return eachr gives iterator the value and key of each item, and will stop if the iterator returned false.",
   "homepage": "https://github.com/bevry/eachr",
   "license": "Artistic-2.0",
@@ -74,7 +74,7 @@
   },
   "editions": [
     {
-      "description": "ESNext source code for Node.js 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
+      "description": "ESNext source code for Node.js 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
@@ -84,7 +84,7 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
+        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
         "browsers": false
       }
     },
@@ -100,20 +100,6 @@
       "engines": {
         "node": false,
         "browsers": "defaults"
-      }
-    },
-    {
-      "description": "ESNext compiled for Node.js 21 with Require for modules",
-      "directory": "edition-node-21",
-      "entry": "index.js",
-      "tags": [
-        "compiled",
-        "javascript",
-        "require"
-      ],
-      "engines": {
-        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21",
-        "browsers": false
       }
     },
     {
@@ -144,23 +130,22 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/preset-env": "^7.23.3",
     "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.2.0",
+    "assert-helpers": "^11.3.0",
     "eslint": "^8.53.0",
-    "eslint-config-bevry": "^3.29.0",
+    "eslint-config-bevry": "^4.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^5.0.1",
-    "kava": "^7.0.0",
+    "kava": "^7.1.0",
     "prettier": "^3.1.0",
-    "projectz": "^2.23.0",
+    "projectz": "^3.0.0",
     "semver": "4.3.6",
-    "valid-directory": "^4.1.0"
+    "valid-directory": "^4.2.0"
   },
   "scripts": {
-    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
-    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-node-21 && npm run our:compile:edition-node-6",
+    "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
+    "our:compile": "npm run our:compile:edition-browsers && npm run our:compile:edition-node-6",
     "our:compile:edition-browsers": "env BABEL_ENV=edition-browsers babel --out-dir ./edition-browsers ./source",
-    "our:compile:edition-node-21": "env BABEL_ENV=edition-node-21 babel --out-dir ./edition-node-21 ./source && printf '%s' '{\"type\": \"commonjs\"}' > edition-node-21/package.json",
     "our:compile:edition-node-6": "env BABEL_ENV=edition-node-6 babel --out-dir ./edition-node-6 ./source && printf '%s' '{\"type\": \"commonjs\"}' > edition-node-6/package.json",
     "our:deploy": "printf '%s\n' 'no need for this project'",
     "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
@@ -202,23 +187,6 @@
               "targets": {
                 "esmodules": false,
                 "browsers": "defaults"
-              },
-              "modules": "commonjs"
-            }
-          ]
-        ],
-        "plugins": [
-          "@babel/proposal-object-rest-spread"
-        ]
-      },
-      "edition-node-21": {
-        "sourceType": "script",
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": {
-                "node": "21"
               },
               "modules": "commonjs"
             }
