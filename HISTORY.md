@@ -1,5 +1,10 @@
 # History
 
+## v6.4.0 2023 November 19
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+-   Dropped need for `semver` dev dependency, as we no longer support Node.js versions <0.12 which is what it was needed for.
+
 ## v6.3.0 2023 November 14
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

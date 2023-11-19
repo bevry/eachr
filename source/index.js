@@ -1,10 +1,10 @@
 /* eslint no-cond-assign:0 */
 'use strict'
 
-// Import
+// external
 const typeChecker = require('typechecker')
 
-// Eachr
+// eachr
 module.exports = function eachr(subject, callback) {
 	// Handle
 	if (typeChecker.isArray(subject)) {

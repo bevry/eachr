@@ -1,13 +1,14 @@
 /* eslint no-console:0 */
 'use strict'
 
-// Import
+// external
 const { equal, deepEqual } = require('assert-helpers')
 const kava = require('kava')
-const semver = require('semver')
-const eachr = require('./')
 
-// Test
+// local
+const eachr = require('./index.js')
+
+// test
 kava.suite('eachr', function (suite, test) {
 	// Arrays
 	test('should cycle arrays', function () {
@@ -59,13 +60,6 @@ kava.suite('eachr', function (suite, test) {
 
 	// Objects
 	test('should cycle maps', function () {
-		if (semver.satisfies(process.version, '>=0.12') === false) {
-			console.warn(
-				`This version of node ${process.version} does not support Maps, skipping test...`
-			)
-			return
-		}
-
 		// Prepare
 		const map = new Map([
 			['a', 'first'],
