@@ -89,7 +89,7 @@ eachr(map, iterator)
 
 ``` html
 <script type="module">
-    import * as pkg from '//dev.jspm.io/eachr@6.5.0'
+    import * as pkg from '//dev.jspm.io/eachr@6.6.0'
 </script>
 ```
 
