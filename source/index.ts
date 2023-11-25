@@ -1,20 +1,25 @@
 /* eslint no-cond-assign:0 */
-'use strict'
 
 // external
-const typeChecker = require('typechecker')
+import { isArray, isPlainObject, isMap } from 'typechecker'
 
-// eachr
-module.exports = function eachr(subject, callback) {
-	// Handle
-	if (typeChecker.isArray(subject)) {
+/**
+ * Iterate through the subject with the callback.
+ * If you ECMAScript version supports it, use `for ( const [key, value] of Object.entries(thing) )` instead.
+ * @throws if subject is not an array, plain object, or map
+ */
+export default function eachr<T extends any>(
+	subject: T,
+	callback: (this: T, value: any, key: any, subject: T) => boolean | void
+): T {
+	if (isArray(subject)) {
 		for (let key = 0; key < subject.length; ++key) {
 			const value = subject[key]
 			if (callback.call(subject, value, key, subject) === false) {
 				break
 			}
 		}
-	} else if (typeChecker.isPlainObject(subject)) {
+	} else if (isPlainObject(subject)) {
 		for (const key in subject) {
 			if (subject.hasOwnProperty(key)) {
 				const value = subject[key]
@@ -23,7 +28,7 @@ module.exports = function eachr(subject, callback) {
 				}
 			}
 		}
-	} else if (typeChecker.isMap(subject)) {
+	} else if (isMap(subject)) {
 		const entries = subject.entries()
 		let entry
 		while ((entry = entries.next().value)) {
@@ -37,6 +42,6 @@ module.exports = function eachr(subject, callback) {
 		throw new Error('eachr does not know how to iterate what was passed to it')
 	}
 
-	// Return
+	// return
 	return subject
 }

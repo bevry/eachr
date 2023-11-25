@@ -1,12 +1,9 @@
-/* eslint no-console:0 */
-'use strict'
-
 // external
-const { equal, deepEqual } = require('assert-helpers')
-const kava = require('kava')
+import { equal, deepEqual } from 'assert-helpers'
+import kava from 'kava'
 
 // local
-const eachr = require('./index.js')
+import eachr from './index.js'
 
 // test
 kava.suite('eachr', function (suite, test) {
@@ -15,7 +12,7 @@ kava.suite('eachr', function (suite, test) {
 		// Prepare
 		const arr = ['first', 'second', 'third']
 		const expected = [['first', 0, arr, arr], ['second', 1, arr, arr], 'break']
-		const actual = []
+		const actual: any[] = []
 
 		// Cycle
 		const result = eachr(arr, function (value, key, subject) {
@@ -41,7 +38,7 @@ kava.suite('eachr', function (suite, test) {
 			['second', 'b', obj, obj],
 			'break',
 		]
-		const actual = []
+		const actual: any[] = []
 
 		// Cycle
 		const result = eachr(obj, function (value, key, subject) {
@@ -71,7 +68,7 @@ kava.suite('eachr', function (suite, test) {
 			['second', 'b', map, map],
 			'break',
 		]
-		const actual = []
+		const actual: any[] = []
 
 		// Cycle
 		const result = eachr(map, function (value, key, subject) {
