@@ -1,15 +1,15 @@
 {
   "compilerOptions": {
     "allowJs": true,
+    "downlevelIteration": true,
     "esModuleInterop": true,
     "isolatedModules": true,
     "maxNodeModuleJsDepth": 5,
-    "moduleResolution": "Node",
-    "strict": true,
-    "target": "ES2022",
-    "skipLibCheck": false,
     "module": "ESNext",
-    "downlevelIteration": true
+    "moduleResolution": "Node",
+    "skipLibCheck": false,
+    "strict": true,
+    "target": "ES2022"
   },
   "include": ["source"]
 }
